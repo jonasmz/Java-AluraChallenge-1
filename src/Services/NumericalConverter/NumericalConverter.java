@@ -44,7 +44,8 @@ public class NumericalConverter implements INumericalConverter {
         char[] symbols = _baseMap.get(ofBase).getSymbols();
         value = value.toUpperCase();
         for(int i = 0; i < value.length(); i++){
-            if(value.indexOf(symbols[i]) == -1)
+            char actualChar = value.charAt(i); 
+            if(String.valueOf(symbols).indexOf(actualChar) == -1)
                 return false;
         }
         return true;
