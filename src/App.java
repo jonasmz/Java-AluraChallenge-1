@@ -5,7 +5,10 @@ import Services.NumericalConverter.NumericalConverter;
 public class App {
     public static void main(String[] args) throws Exception {
        INumericalConverter conv = new NumericalConverter();
-       var x = conv.formatToDecimal("ff", NumericalBaseEnum.OCTAL);
-       System.out.println(x);
+       var base = NumericalBaseEnum.HEXADECIMAL;
+       var x1 = conv.formatToDecimal("ffff", base);
+       var x2 = conv.decimalToFormat(x1, base);
+       System.out.println("Decimal: "+ x1);
+       System.out.println(base + ": " + x2);
     }
 }

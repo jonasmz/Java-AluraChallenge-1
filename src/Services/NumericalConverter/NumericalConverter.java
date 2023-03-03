@@ -1,5 +1,6 @@
 package Services.NumericalConverter;
 
+import java.sql.PreparedStatement;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,8 +16,16 @@ public class NumericalConverter implements INumericalConverter {
         _baseMap.put(NumericalBaseEnum.HEXADECIMAL, new NumericalBase(16, new char[]{'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'}) );
     }
 
-    public void decimalToFormat(String value, NumericalBaseEnum toBase) {
-       
+    public String decimalToFormat(String value, NumericalBaseEnum toBase) throws Exception {
+        try{
+            _temp = Long.parseLong(value);
+            int base = _baseMap.get(toBase).getBase();
+            char[] symbols = _baseMap.get(toBase).getSymbols();
+            _fromDecimal(_temp, base, symbols);
+            return _result; 
+        }catch(Exception ex){
+            throw ex;
+        }
     }
 
     public String formatToDecimal(String value, NumericalBaseEnum ofBase) {
@@ -26,6 +35,16 @@ public class NumericalConverter implements INumericalConverter {
         char[] symbols = _baseMap.get(ofBase).getSymbols();
         _toDecimal(value, base, symbols);
         return _result;
+    }
+
+    private void _fromDecimal(long value, int toBase, char[] symbols){
+        _temp = 0;
+        _result = new String();
+        while(value > 0){
+            _temp = value % toBase;
+            _result = symbols[(int)_temp] + _result;
+            value /= toBase;
+        }
     }
 
     private void _toDecimal(String value, int base, char[] symbols){
