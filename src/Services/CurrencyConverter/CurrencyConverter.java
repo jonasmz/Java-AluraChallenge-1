@@ -15,7 +15,11 @@ public class CurrencyConverter {
         client.setTimeOut(90);
     }
 
-    public CurrencyConverterResult Convert() throws Exception{
+    public CurrencyConverterResult Convert(String from, String to, int amount) throws Exception{
+        _setCurrencyFrom(from);
+        _setCurrencyTo(to);
+        _setAmount(amount);
+        
         client.sendRequest();
         
         if(client.getStatusCode() == 200){
@@ -28,15 +32,7 @@ public class CurrencyConverter {
         return null;
     }
 
-    public String Convert(String from, String to, int amount){
-        setCurrencyFrom(from);
-        setCurrencyTo(to);
-        setAmount(amount);
-        
-        return null;
-    }
-
-    public void setCurrencyTo(String currencyTo){
+    private void _setCurrencyTo(String currencyTo){
         if(currencyTo != null)
             _currencyTo = currencyTo;
         client.addQueryParam("to", _currencyTo);
@@ -46,7 +42,7 @@ public class CurrencyConverter {
         return _currencyTo;
     }
 
-    public void setCurrencyFrom(String currencyFrom){
+    private void _setCurrencyFrom(String currencyFrom){
         if(currencyFrom != null)
             _currencyFrom = currencyFrom;
         client.addQueryParam("from", _currencyFrom);
@@ -56,7 +52,7 @@ public class CurrencyConverter {
         return _currencyFrom;
     }
 
-    public void setAmount(int amount){
+    private void _setAmount(int amount){
         if(amount < 1)
             throw new RuntimeException("Amount can't be less than one (1)");
         _amount = String.valueOf(amount);
