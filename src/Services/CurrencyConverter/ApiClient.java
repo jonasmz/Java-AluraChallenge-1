@@ -30,7 +30,10 @@ public class ApiClient{
         HttpRequest request = _buildRequest();
         try{
             _response = _client.send(request, BodyHandlers.ofString());
-        }catch(Exception exception){
+        }catch(ConnectException connectException){
+            throw new ConnectException(connectException.getMessage());
+        }
+        catch(Exception exception){
             throw exception;
         };
     }
@@ -125,7 +128,7 @@ public class ApiClient{
         if(_queryParams.size() > 0){
             int count = 0; 
             for(String key : _queryParams.keySet()){
-                char separator = (count > 0) ? '?' : ':';
+                char separator = (count > 0) ? '&' : '?';
                 url += separator + key + '=' + _queryParams.get(key);
                 count++;
             }
