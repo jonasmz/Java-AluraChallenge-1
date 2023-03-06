@@ -15,7 +15,7 @@ public class CurrencyConverter {
         client.setTimeOut(90);
     }
 
-    public CurrencyConverterResult Convert(String from, String to, int amount) throws Exception{
+    public CurrencyConverterResult Convert(String from, String to, Double amount) throws Exception{
         _setCurrencyFrom(from);
         _setCurrencyTo(to);
         _setAmount(amount);
@@ -52,7 +52,7 @@ public class CurrencyConverter {
         return _currencyFrom;
     }
 
-    private void _setAmount(int amount){
+    private void _setAmount(Double amount){
         if(amount < 1)
             throw new RuntimeException("Amount can't be less than one (1)");
         _amount = String.valueOf(amount);
