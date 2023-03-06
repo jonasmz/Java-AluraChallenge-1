@@ -1,6 +1,6 @@
 package Services.CurrencyConverter;
 
-public class CurrencyConvertResult {
+public class CurrencyConverterResult {
     private String result;
     private String success;
     private CurrencyConverterError error;
