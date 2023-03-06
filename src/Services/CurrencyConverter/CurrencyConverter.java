@@ -26,10 +26,16 @@ public class CurrencyConverter {
             Gson parser = new Gson();
              _result = parser.fromJson(client.getResponseBody(), CurrencyConverterResult.class);
             
-            return _result;
+        }else{
+            _result = new CurrencyConverterResult();
+            _result.setSuccess("false");
+            CurrencyConverterError error = new CurrencyConverterError();
+            error.setCode(String.valueOf(client.getStatusCode()));
+            error.setInfo(client.getResponseBody());
+            _result.setError(error);
         }
 
-        return null;
+        return _result;
     }
 
     private void _setCurrencyTo(String currencyTo){
