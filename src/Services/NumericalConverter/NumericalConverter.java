@@ -18,7 +18,7 @@ public class NumericalConverter{
 
     public String convert(String value, NumericalBaseEnum fromBase, NumericalBaseEnum toBase){
         if(!_validateInput(value, fromBase))
-            throw new RuntimeException("El formato de la entrada es incorrecto para la base numerica: " + fromBase);
+            throw new RuntimeException("The input format is incorrect for the number base: " + fromBase);
         
         if(fromBase == toBase) 
             return value;
