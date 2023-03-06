@@ -3,6 +3,7 @@ import com.google.gson.Gson;
 
 public class CurrencyConverter {
     public ApiClient client;
+    private String _apiKey = "NCDLawh1haw66ao4PqvQxjWZ8xmo6gRr";
     private String _currencyTo = "USD";
     private String _currencyFrom = "GBP";
     private String _amount = "1";
@@ -11,7 +12,7 @@ public class CurrencyConverter {
     public CurrencyConverter() {
         client = new ApiClient();
         client.setURLBase("https://api.apilayer.com/currency_data/convert");
-        client.addHeaderParam("apikey", "NCDLawh1haw66ao4PqvQxjWZ8xmo6gRr");
+        client.addHeaderParam("apikey", _apiKey);
         client.setTimeOut(90);
     }
 
@@ -20,6 +21,8 @@ public class CurrencyConverter {
         _setCurrencyTo(to);
         _setAmount(amount);
         
+        if(_apiKey == null)
+            throw new NullPointerException("Apikey can't be null");
         client.sendRequest();
         
         if(client.getStatusCode() == 200){
@@ -36,6 +39,10 @@ public class CurrencyConverter {
         }
 
         return _result;
+    }
+
+    public void setServiceApikey(String key){
+        _apiKey = key;
     }
 
     private void _setCurrencyTo(String currencyTo){
