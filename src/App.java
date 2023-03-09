@@ -2,9 +2,10 @@ import Services.CurrencyConverter.CurrencyConverter;
 import Services.NumericalConverter.NumericalBaseEnum;
 import Services.NumericalConverter.NumericalConverter;
 import UI.MainWindow;
+import UI.CurrencyConverterUI.CCWindow;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
     //    NumericalConverter numberConverter = new NumericalConverter();
     //    var fromBase = NumericalBaseEnum.HEXADECIMAL;
     //    var toBase = NumericalBaseEnum.OCTAL;
@@ -31,5 +32,7 @@ public class App {
     //    }
 
     new MainWindow();
+
+    
     }
 }
