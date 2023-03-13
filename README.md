@@ -1,6 +1,6 @@
 ## JMZ CurrencyConverter for Java AluraChallenge 1
 
-Aplicacion para convertir divisas, que utiliza el servicio api (https://apilayer.com/marketplace/exchangerates_data-api)[Exchange Rates]
+Aplicacion para convertir divisas, que utiliza el servicio api [Exchange Rates](https://apilayer.com/marketplace/exchangerates_data-api)
 
 Ademas incluye un conversor de bases numericas.
 
