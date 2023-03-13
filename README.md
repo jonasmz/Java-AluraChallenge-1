@@ -8,7 +8,7 @@ Ademas incluye un conversor de bases numericas.
 
 El conversor de divisas permite convertir las siguien1tes divisas:
 
-    * USD: Dolar Norte Americano
+    * USD: Dolar Estadounidense
     * GBP: Libra esterlina
     * EUR: Euro
     * JPY: Yen Japones
