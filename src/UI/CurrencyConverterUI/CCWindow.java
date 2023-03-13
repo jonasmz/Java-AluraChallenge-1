@@ -82,6 +82,7 @@ public class CCWindow extends JDialog {
 
     private String convert(){
         CurrencyConverter converter = new CurrencyConverter();
+        converter.setServiceApikey("NCDLawh1haw66ao4PqvQxjWZ8xmo6gRr");
 
         var from = cmbFrom.getSelectedItem().toString();
         var to = cmbTo.getSelectedItem().toString();
@@ -89,6 +90,11 @@ public class CCWindow extends JDialog {
        
         try{
             double amount = Double.parseDouble(amountText);
+            if(amount < 1){
+                JOptionPane.showMessageDialog(null, "La entrada para cantidad no puuede ser inderior a 1", "NumberFormatException", 0);
+                txtAmount.setText("1");
+                txtAmount.requestFocus();
+            }
             var result = converter.Convert(from, to, amount);
             if(Boolean.valueOf(result.getSuccess()))
                 return result.getResult();

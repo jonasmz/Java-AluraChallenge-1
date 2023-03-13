@@ -10,6 +10,8 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.plaf.basic.BasicScrollPaneUI;
+
 public class ApiClient{
     private HttpClient _client;
     private HttpRequest.Builder _request;
@@ -70,12 +72,20 @@ public class ApiClient{
         return _getParameter(key, _headerParams);
     }
 
+    public boolean removeHeaderParam(String key){
+        return _removeParameter(key, _headerParams);
+    }
+
     public void addQueryParam(String key, String value){
         _addParameter(key, value, _queryParams);
     }
 
     public String getQueryParam(String key){
         return _getParameter(key, _queryParams);
+    }
+
+    public boolean removeQueryParam(String key){
+        return _removeParameter(key, _queryParams);
     }
 
     public void setTimeOut(int seconds){
@@ -94,10 +104,19 @@ public class ApiClient{
     }
 
     private String _getParameter(String key, Map<String,String> objectMap){
-        if(!objectMap.containsKey(key))
-            throw new RuntimeException("The key is not assigned in the parameter list");
-        
-        return objectMap.get(key);
+        if(objectMap.containsKey(key))
+            return objectMap.get(key);
+            
+        return null;
+    }
+
+    private boolean _removeParameter(String key, Map<String, String> objectMap){
+        if(_getParameter(key, objectMap) != null){
+            objectMap.remove(key);
+            return true;
+        }
+
+        return false;
     }
 
     private void setMethod(HttpMethodsEnum method){
