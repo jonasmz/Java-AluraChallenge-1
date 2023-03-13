@@ -79,7 +79,7 @@ public class CCWindow extends JDialog {
 
     private String convert(){
         CurrencyConverter converter = new CurrencyConverter();
-        converter.setServiceApikey("NCDLawh1haw66ao4PqvQxjWZ8xmo6gRr");
+        converter.setServiceApikey("type your apikey here");
 
         var from = cmbFrom.getSelectedItem().toString();
         var to = cmbTo.getSelectedItem().toString();

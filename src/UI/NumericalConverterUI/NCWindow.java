@@ -23,8 +23,6 @@ public class NCWindow extends JDialog{
     private JPanel frmCCpanel = new JPanel(null);
     private JComboBox cmbFrom = new JComboBox<>();
     private JComboBox cmbTo = new JComboBox<>();
-    private JLabel lblTitle = new JLabel("JMZ Numerical Converster");
-    private JLabel lblFooter = new JLabel("Desarrollado por: JonasMZ para AluraChallenge 1");
     private JLabel lblFrom = new JLabel("From Base:");
     private JLabel lblTo = new JLabel("To Base:");
     private JTextField txtResult = new JTextField();
