@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import UI.CurrencyConverterUI.CCWindow;
+import UI.NumericalConverterUI.NCWindow;
 
 public class MainWindow extends JFrame{
     JFrame mainReference = this;
@@ -17,6 +18,7 @@ public class MainWindow extends JFrame{
     JButton btnNumericalConverter = new JButton("Conversor de bases numericas"); 
     JButton btnCurrencyConverter = new JButton("Conversor de divisas");
     CCWindow currencyConverterWindow = null;
+    NCWindow numericalConverterWindow = null;
 
     public MainWindow() {
         btnCurrencyConverter.setBounds(75, 50, 300, 150);
@@ -39,6 +41,16 @@ public class MainWindow extends JFrame{
                     currencyConverterWindow =  new CCWindow(mainReference, false);
                 else
                     currencyConverterWindow.setVisible(true);
+            }
+        });
+
+        btnNumericalConverter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                if(numericalConverterWindow == null)
+                    numericalConverterWindow =  new NCWindow(mainReference, false);
+                else
+                    numericalConverterWindow.setVisible(true);
             }
         });
     }
