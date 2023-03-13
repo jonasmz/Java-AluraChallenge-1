@@ -25,6 +25,7 @@ public class MainWindow extends JFrame{
         frmMainForm.add(btnNumericalConverter);
         frmMainForm.add(btnCurrencyConverter);
 
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(frmMainForm);
         this.setTitle("Alura Challenge 1 - Conversor de Divisas");
         this.setBounds(20, 20, 850, 300);
