@@ -86,18 +86,11 @@ public class NCWindow extends JDialog{
         var to = (NumericalBaseEnum)cmbTo.getSelectedItem();
         var value = txtImputValue.getText();
         String result = null;
-        if(value == "" | value == null){
-            JOptionPane.showMessageDialog(null, "La entrada numerica es invalida", "Entrada invalida", 0);
-            txtImputValue.setText("1");
-            txtImputValue.requestFocus();
-            return null;
-        }
-
         try{
             result = converter.convert(value, from, to);
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Generic Error", 0);
-            return null;
+            result = null;
         }
 
         return result;

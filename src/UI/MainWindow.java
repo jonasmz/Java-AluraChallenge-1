@@ -4,9 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import UI.CurrencyConverterUI.CCWindow;
@@ -29,7 +27,7 @@ public class MainWindow extends JFrame{
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(frmMainForm);
-        this.setTitle("Alura Challenge 1 - Conversor de Divisas");
+        this.setTitle("Alura Challenge 1 - Conversor de Divisas by JonasMZ");
         this.setBounds(20, 20, 850, 300);
         this.setVisible(true);
         

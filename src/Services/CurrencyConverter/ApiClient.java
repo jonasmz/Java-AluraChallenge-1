@@ -10,8 +10,6 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.plaf.basic.BasicScrollPaneUI;
-
 public class ApiClient{
     private HttpClient _client;
     private HttpRequest.Builder _request;
@@ -19,7 +17,6 @@ public class ApiClient{
     private Map<String, String> _headerParams = new HashMap<>();
     private Map<String, String> _queryParams = new HashMap<>();
     private String _URLBase;
-    private HttpMethodsEnum _method = HttpMethodsEnum.GET;
     private int _timeOut = 15;
 
     public ApiClient() {
@@ -117,14 +114,6 @@ public class ApiClient{
         }
 
         return false;
-    }
-
-    private void setMethod(HttpMethodsEnum method){
-        
-    }
-
-    private String getMethod(){
-        return _method.toString();
     }
 
     private HttpRequest _buildRequest(){

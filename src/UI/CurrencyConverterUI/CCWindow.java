@@ -22,8 +22,6 @@ public class CCWindow extends JDialog {
     private JPanel frmCCpanel = new JPanel(null);
     private JComboBox cmbFrom = new JComboBox<>();
     private JComboBox cmbTo = new JComboBox<>();
-    private JLabel lblTitle = new JLabel("JMZ Currency Conversor");
-    private JLabel lblFooter = new JLabel("Desarrollado por: JonasMZ para AluraChallenge 1");
     private JLabel lblFrom = new JLabel("From currency:");
     private JLabel lblTo = new JLabel("To currency:");
     private JLabel lblResult = new JLabel();
