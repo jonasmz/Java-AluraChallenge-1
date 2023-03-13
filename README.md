@@ -1,18 +1,37 @@
-## Getting Started
+## JMZ CurrencyConverter for Java AluraChallenge 1
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Aplicacion para convertir divisas, que utiliza el servicio api (https://apilayer.com/marketplace/exchangerates_data-api)[Exchange Rates]
 
-## Folder Structure
+Ademas incluye un conversor de bases numericas.
 
-The workspace contains two folders by default, where:
+## Caracteristicas principales
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+El conversor de divisas permite convertir las siguien1tes divisas:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    * USD: Dolar Norte Americano
+    * GBP: Libra esterlina
+    * EUR: Euro
+    * JPY: Yen Japones
+    * KRW: Won Sur Coreano
+    * ARS: Peso Argentino
+    * BRL: Real Brasilero
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Por su parte el conversor de bases numericas dispone de las siguientes bases:
+   
+    - DECIMAL
+    - BINARIO
+    - OCTAL
+    - HEXADECIMAL
 
-## Dependency Management
+## NOTA IMPORTANTE
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Para poder utilizar el conversor de divisas es importante que primero siga los sientes pasos:
+
+    + Dirijase al sitio https://apilayer.com/marketplace/exchangerates_data-api y obtenga un subscripcion (Puede utilizar una subscripcion gratuita que le ofrece 250 peticiones mensuales)
+
+    + Una vez obtenida la apiKey para Exchange Rates, adentro del paquete UI, insertale en la clase CCWindow.java, en el metodo convert. Alli se realiza una llamada al metodo setServiceApikey del cliente api.
+
+    + Finalizado el paso anterior ya puede empezar a realizar peticiones a traves del conversor de divisas.
+
+
+## ¡Que lo disfrutes!
