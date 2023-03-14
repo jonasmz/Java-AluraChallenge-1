@@ -33,6 +33,8 @@ Para poder utilizar el conversor de divisas es importante que primero siga los s
 
     + Finalizado el paso anterior ya puede empezar a realizar peticiones a traves del conversor de divisas.
 
+Ademas deberas incluir la libreria [Gson](https://search.maven.org/remotecontent?filepath=com/google/code/gson/gson/2.10.1/gson-2.10.1.jar)
+
 
 ## ¡Que lo disfrutes!
 
