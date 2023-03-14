@@ -35,3 +35,5 @@ Para poder utilizar el conversor de divisas es importante que primero siga los s
 
 
 ## ¡Que lo disfrutes!
+
+![Crrency converter snapshot](/Snapshot.png "Currency Converter Snapshot")
